@@ -87,3 +87,9 @@ gem 'shoulda-matchers', '~> 4.0'
 gem 'rails-controller-testing'
 
 gem 'factory_bot_rails'
+
+gem 'bullet', '~> 7.0'
+
+gem 'letter_opener', '~> 1.8'
+
+gem 'rswag'
