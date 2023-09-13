@@ -1,8 +1,9 @@
-require 'rails_helper'
+require_relative '../rails_helper'
 
 RSpec.describe Group, type: :model do
-  let(:user) { User.new(name: 'biftu', email: 'biftu@example.com', password: 'password') }
-  subject { Group.new(name: 'G1', author: user) }
+  let(:user) { User.new(name: 'First User', email: 'test@example.com', password: 'password') }
+  subject { Group.new(name: 'First Group', author: user) }
+
   before do
     subject.icon.attach(io: File.open(Rails.root.join('spec', 'models', 'files', 'test.png')), filename: 'test.png',
                         content_type: 'image/png')
@@ -18,15 +19,15 @@ RSpec.describe Group, type: :model do
       subject.name = nil
       expect(subject).to_not be_valid
     end
+  end
 
-    describe 'check association' do
-      it 'belongs to a user' do
-        expect(subject).to respond_to(:author)
-      end
+  describe 'associations' do
+    it 'belongs to a user' do
+      expect(subject).to respond_to(:author)
+    end
 
-      it 'has many entities' do
-        expect(subject).to respond_to(:entities)
-      end
+    it 'has many entities' do
+      expect(subject).to respond_to(:entities)
     end
   end
 end
