@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Entity, type: :model do
-  subject { Entity.new(name: 'E1', amount: 50) }
+  let(:user) { User.new(name: 'biftu', email: 'biftu@example.com', password: 'password') }
+  subject { Entity.new(name: 'E1', amount: 50, author: user) }
   before { subject.save }
 
   describe 'validate the entity model' do
@@ -14,8 +15,13 @@ RSpec.describe Entity, type: :model do
     end
 
     describe 'check association' do
-      it { should belong_to(:author) }
-      it { should have_many(:groups) }
+      it 'belongs to a user' do
+        expect(subject).to respond_to(:author)
+      end
+
+      it 'has many groups' do
+        expect(subject).to respond_to(:groups)
+      end
     end
   end
 end

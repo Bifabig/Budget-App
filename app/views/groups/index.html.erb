@@ -1,1 +1,11 @@
-<h1 class="recipes_header">Categories</h1>
+<div class="acct-pg">
+  <div class="cat">
+    <h2 class="text-cat">CATEGORIES</h2>
+    <div class="absolute-new">
+      <%= link_to "New", new_group_path, class: "text-new" %>
+    </div>
+  </div>
+  <div class="img-new">
+    <%= render partial: "group", collection: @groups, as: :group %>
+  </div>
+</div>

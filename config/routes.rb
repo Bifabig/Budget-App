@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     end
 
     unauthenticated :user do
-      root to: 'devise/sessions#new', as: :unauthenticated_root
+      root to: 'devise/sessions#splash', as: :unauthenticated_root
     end
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  root 'groups#index'
-  resources :groups
+  resources :groups do
+    resources :entities do
+    end
+  end
 end

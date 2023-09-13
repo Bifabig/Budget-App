@@ -11,12 +11,20 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p class="flash notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="flash alert"><%= alert %></p>
-    <% end %>
-    <%= yield %>
+    <main class="main">
+      <%= yield %>
+
+      <% if notice %>
+        <p class=""><%= notice %></p>
+      <% end %>
+
+      <% if alert %>
+        <p class=""><%= alert %></p>
+      <% end %>
+
+      <% if flash[:error] %>
+        <p class=""><%= flash[:error] %></p>
+      <% end %>
+    </main>
   </body>
 </html>

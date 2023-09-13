@@ -1,12 +1,30 @@
 class EntitiesController < ApplicationController
-  before_action :set_entities, only: %i[show edit update destroy]
+  def new
+    @entity = Entity.new
+    @groups = current_user.groups
+    @group = current_user.groups.find(params[:group_id])
+  end
 
-  def index
-    @user = current_user
-    if @user.nil?
-      redirect_to user_session_path, flash: { alert: 'You must be signed in to continue.' }
+  def create
+    entity = Entity.create(entity_params)
+    entity.author = current_user
+    group = current_user.groups.find(params[:group_id])
+
+    if entity.save
+      entity.groups << Group.find(params[:entity][:group_ids]) if params[:entity][:group_ids].present?
+      group.entities << entity
+
+      redirect_to group_path(group)
+      flash[:notice] = 'Entity created successfully'
     else
-      @entities = @user.entities
+      redirect_to new_entity_path
+      flash[:alert] = entity.errors.full_messages.join(', ')
     end
+  end
+
+  private
+
+  def entity_params
+    params.require(:entity).permit(:name, :amount)
   end
 end
