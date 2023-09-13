@@ -1,15 +1,12 @@
 <div class="login-pg">
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "login-reg" }) do |f| %>
-    <h2 class="text-2xl text-gray-100">SIGN UP</h2>
-
-    <div class="log-in">
-      <div class="absolute">
-        <%= f.submit "Register", class: "text" %>
-      </div>
+    <div class="abs">
       <div class="actions">
-        <a href="/" class="back">Back</a>
+        <a href="/" class="back">⬅</a>
       </div>
+      <h2>REGISTER</h2>
+      <h4><%= f.submit "Register", class: "text" %></h4>      
     </div>
 
     <div class="field">
@@ -41,6 +38,7 @@
                        placeholder: "Confirm password",
                        class: "w-full" %>
     </div>
+
   <% end %>
 
   <%= render "devise/shared/links" %>
