@@ -13,7 +13,7 @@ class GroupsController < ApplicationController
 
   def create
     group = Group.create(group_params)
-    group.user = current_user
+    group.author = current_user
 
     if group.save
       redirect_to group_path(group)
