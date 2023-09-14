@@ -12,7 +12,6 @@ class EntitiesController < ApplicationController
 
     if entity.save
       entity.groups << Group.find(params[:entity][:group_ids]) if params[:entity][:group_ids].present?
-      group.entities << entity
 
       redirect_to group_path(group)
       flash[:notice] = 'Entity created successfully'
