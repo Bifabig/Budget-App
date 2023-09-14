@@ -15,6 +15,7 @@
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
   - [🚀 Live Demo](#live-demo)
+  - [🎥 Video](#video)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -64,6 +65,18 @@
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- <a href="https://budget-app-biftu.onrender.com/">Budget App Live</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🎥 Video <a name="video"></a>
+
+<a href="https://www.loom.com/share/Budget-Building-Managing-Transactions-and-Categories-2ea1424a6dd34b0cb9e03c763ed5ba6f?sid=89824a7e-15c3-47fa-ac0e-a41c0c21bf82">Get an understanding of the project by watching this video</a>
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
