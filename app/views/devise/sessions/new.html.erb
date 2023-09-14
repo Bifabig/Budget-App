@@ -1,0 +1,28 @@
+<div class="login-pg">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "login-reg" }) do |f| %>
+    <div class="abs">
+      <div class="actions">
+        <a href="/" class="back">⬅</a>
+      </div>
+      <h2>LOGIN</h2>
+      <h4><%= f.submit "Log in", class: "text" %></h4>      
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email,
+                    autofocus: true,
+                    autocomplete: "email",
+                    placeholder: "Email",
+                    class: "w-full" %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password,
+                      autocomplete: "current-password",
+                      placeholder: "Password",
+                      class: "w-full" %>
+    </div>    
+
+  <% end %>
+  <%= render "devise/shared/links" %>
+</div>
