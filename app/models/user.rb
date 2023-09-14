@@ -6,6 +6,5 @@ class User < ApplicationRecord
   has_many :entities, foreign_key: 'author_id'
   has_many :groups, foreign_key: 'author_id'
 
-  # validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 end
